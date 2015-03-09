@@ -1,0 +1,16 @@
+<RCC>
+  <qresource prefix="/">
+    <file>icons/white/arrow-down.svg</file>
+    <file>icons/white/arrow-left.svg</file>
+    <file>icons/white/arrow-right.svg</file>
+    <file>icons/white/arrow-up.svg</file>
+    <file>icons/icon.svgz</file>
+    <file>icons/black/arrow-down.svg</file>
+    <file>icons/black/arrow-left.svg</file>
+    <file>icons/black/arrow-right.svg</file>
+    <file>icons/black/arrow-up.svg</file>
+    <file>icons/black/kt-check-data.svg</file>
+    <file>icons/white/kt-check-data.svg</file>
+    <file>icons/black/check-radio.svg</file>
+  </qresource>
+</RCC>
