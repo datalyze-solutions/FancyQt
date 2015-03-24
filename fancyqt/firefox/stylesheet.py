@@ -12,10 +12,12 @@ values = {
     "ffButtonHighlightMainBorder": "#a0a0a0",
     "ffTooltip": "#443d39",
     "ffFontColorDark": "#221f1e",
-    "ffHighlight": "#0B81CE",
+    "ffHighlight": "#77B7E0",
+    "ffHighlightLight": "#9BCAE9",
+    "ffHighlightDark": "#055C94",
     "ffScrollbarBackground": "#afa7a3",
     "ffScrollbarHandleBorder": "#7d7875",
-    "border-radius": "3px",
+    "borderRadius": "3px",
 }
 print "reloaded"
 
@@ -26,7 +28,12 @@ QWidget </
 
 QFrame </
     background: None;
-    border: None
+    border: None;
+/>
+
+QMainWindow </
+    background: None;
+    border: None;
 />
 
 QToolTip </
@@ -35,7 +42,7 @@ QToolTip </
     color: {ffFontColorDark};
     padding: 3px;
     opacity: 200;
-    border-radius: {border-radius};
+    border-radius: {borderRadius};
 />
 
 QAbstractScrollArea </
@@ -46,7 +53,7 @@ QAbstractScrollArea </
 QTextEdit, QPlainTextEdit, QLineEdit, QAbstractSpinBox </
     background: {ffWhite};
     border: 1px solid {ffBorder};
-    border-radius: {border-radius};
+    border-radius: {borderRadius};
     color: {ffFontColorDark};
     padding: 3px;
 />
@@ -97,20 +104,31 @@ QAbstractSpinBox::down-arrow, QAbstractSpinBox::down-arrow:disabled, QAbstractSp
 />
 
 
-
-
 QAbstractButton, QAbstractButton::menu-button </
     background: None;
     border: None;
-    border-radius: {border-radius};
+    border-radius: {borderRadius};
     padding: 3px;
     color: {ffFontColorDark};
+/>
+
+
+QAbstractButton </
+    padding: 3px;
+    min-width: 24px;
+/>
+
+QAbstractButton[popupMode="1"] </
+    padding-right: 16px;        /* space for menu button */
 />
 
 QAbstractButton::menu-button </
     background: None;
     width: 16px;
     margin: 1px;
+    padding-right: 0px;
+    subcontrol-origin: margin;
+    subcontrol-position: right;
 />
 
 QAbstractButton::hover </
@@ -150,7 +168,7 @@ QComboBox, QAbstractItemView </
     alternate-background-color: {ffButtonHighlightMenu};
     color: {ffFontColorDark};
     
-    border-radius: {border-radius};
+    border-radius: {borderRadius};
     selection-background-color: {ffHighlight};
     selection-color: {ffWhite};
 />
@@ -196,7 +214,7 @@ QRadioButton::indicator::checked </
 
 QTableView
 </
-    border-radius: {border-radius};
+    border-radius: {borderRadius};
     gridline-color: {ffBorder};
     background-color: {ffWhite};
 />
@@ -263,7 +281,7 @@ QTableView::item::pressed, QListView::item::pressed, QTreeView::item::pressed </
 QComboBox </
     color: {ffFontColorDark};
     border: 1px solid {ffBorder};
-    border-radius: {border-radius};
+    border-radius: {borderRadius};
     padding: 3px;
 />
 
@@ -296,7 +314,7 @@ QComboBox::down-arrow
 />
 
 QDateEdit::drop-down </
-    background-color: None;
+    background-color: Transparent;
     background-image: url(:/icons/black/arrow-down.svg);
     border: None;
     margin: 1px;
@@ -306,7 +324,7 @@ QDateEdit::drop-down </
 QSlider::groove, QxtSpanSlider::groove </
     background: {ffBackground};
     border: 1px solid {ffBackgroundAlternative};
-    border-radius: {border-radius};
+    border-radius: {borderRadius};
 />
 
 QSlider::groove::horizontal </
@@ -322,7 +340,7 @@ QSlider::groove::vertical </
 QSlider::handle, QxtSpanSlider::handle </
     background: {ffBackgroundAlternative};
     border: 1px solid {ffScrollbarHandleBorder};
-    border-radius: {border-radius};
+    border-radius: {borderRadius};
 />
 
 QSlider::handle::horizontal </
@@ -398,7 +416,7 @@ QMenuBar::item::pressed </
 QMenu </
     background: {ffBackground};
     border: 1px solid {ffBorder};
-    border-radius: {border-radius};
+    border-radius: {borderRadius};
     margin: 2px;
 />
 
@@ -416,18 +434,30 @@ QMenu::item::selected </
     background: {ffHighlight};
     color: {ffWhite};
     margin: 3px;
-    border-radius: {border-radius};
+    border-radius: {borderRadius};
+/>
+
+QMenu::item::checked </
+    background: {ffButtonHighlightMenu};
+    color: {ffFontColorDark};
+    border: 1px solid {ffBorder};
+    margin: 3px;
 />
 
 
-QGraphicsView, FigureCanvas </
+QGraphicsView </
     border: 1px solid {ffBorder};
 />
+
+DiagramWidget FigureCanvasQTAgg </      /* matplot */
+    border: 1px solid {ffBorder};
+/>
+
 
 
 QProgressBar </
     border: 1px solid {ffBorder};
-    border-radius: {border-radius};
+    border-radius: {borderRadius};
     text-align: center;
     padding: 1px;
     background: {ffWhite};
@@ -441,9 +471,16 @@ QProgressBar[value="1"] </
 
 QProgressBar::chunk </
     background-color: {ffHighlight};
-    border-radius: {border-radius};
+    border-radius: {borderRadius};
 />
 
+QTabWidget </
+    border: None;
+/>
+
+QTabWidget::pane </
+    border-left: None;
+/>
 
 QTabBar
 </
@@ -453,7 +490,7 @@ QTabBar
 
 QTabBar::tab </
     color: {ffFontColorDark};
-    border: 1px solid {ffBorder};
+    border: None;
     background: {ffBackground};
     background-color: None;
     padding-left: 5px;
@@ -466,14 +503,14 @@ QTabBar::tab </
 QTabBar::tab::top </
     border-bottom: None;
     background-color: None;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
 />
 
 QTabBar::tab::bottom </
     border-top: None;
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 />
 
 QTabBar::tab::top::selected </
@@ -489,7 +526,18 @@ QTabBar::tab::bottom::selected </
 />
 
 QTabBar::tab::bottom::!selected </
+    background-color: {ffBackground};
+    border-left: 1px solid {ffBorder};
+    border-right: 1px solid {ffBorder};
     border-bottom: 3px solid {ffBorder};
+/>
+
+QTabBar::tab::bottom::hover </
+    border-bottom: 3px solid {ffHighlight};
+/>
+
+QTabBar::tab::top::hover </
+    border-top: 3px solid {ffHighlight};
 />
 
 
@@ -519,17 +567,17 @@ QScrollBar::handle
 </
     background-color: {ffBackgroundAlternative};
     border: 1px solid {ffScrollbarHandleBorder};
-    border-radius: {border-radius};
+    border-radius: {borderRadius};
 />
 
 QScrollBar::handle:horizontal
 </
-    min-width: 7px;
+    min-width: 10px;
 />
 
 QScrollBar::handle:vertical
 </
-    min-height: 7px;
+    min-height: 10px;
 />
 
 QScrollBar::handle:hover
@@ -545,7 +593,7 @@ QScrollBar::add-line, QScrollBar::sub-line
     subcontrol-origin: margin;
     background-color: {ffBackground};
     border: 2px solid {ffScrollbarBackground};
-    border-radius: {border-radius};
+    border-radius: {borderRadius};
 />
 
 QScrollBar::add-line:hover, QScrollBar::sub-line:hover
@@ -582,9 +630,52 @@ QScrollBar::up-arrow, QScrollBar::down-arrow, QScrollBar::add-page, QScrollBar::
     background: None;
 />
 
+QSplitter </
+    background: {ffButtonHighlightMain};
+/>
+
+QSplitter::handle </
+    margin: 1px;
+/>
+
+QSplitter::handle:horizontal </
+    image: url(:icons/black/splitter-horizontal.svg);
+    width: 2px;
+/>
+
+QSplitter::handle:vertical </
+    image: url(:icons/black/splitter-vertical.svg);
+    height: 2px;
+/>
+
+QSplitter::handle:pressed </
+    /*image: url(images/splitter_pressed.png);*/
+/>
+
+QMainWindow::separator </
+    background: {ffButtonHighlightMain};
+    width: 6px;
+    height: 6px;
+    margin: 1px;
+/>
+
+QMainWindow::separator::vertical </
+    image: url(:icons/black/splitter-horizontal.svg);
+/>
+
+QMainWindow::separator::horizontal </
+    image: url(:icons/black/splitter-vertical.svg);
+/>
+
+
+
+QgsSpafMapCanvas </
+    border: None;
+/>
+
 QgsSpafMapCanvas QFrame </
     background: {ffWhite};
-    border-radius: {border-radius};
+    border-radius: {borderRadius};
     color: {ffFontColorDark};
     border: 1px solid {ffBorder};
 />
@@ -595,7 +686,7 @@ QgsSpafMapCanvas QLabel </
 />
 
 QgsSpafMapCanvas QScrollArea QWidget </
-    border-radius: {border-radius};
+    border-radius: {borderRadius};
 />
 
 """.format(**values).replace("</", "{").replace("/>", "}")

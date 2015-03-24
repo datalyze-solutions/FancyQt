@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'examples/dummy.ui'
 #
-# Created: Mon Mar  9 11:47:00 2015
+# Created: Tue Mar 10 17:23:30 2015
 #      by: PyQt4 UI code generator 4.10.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -92,6 +92,16 @@ class Ui_DummyWidget(object):
         self.verticalSlider.setOrientation(QtCore.Qt.Vertical)
         self.verticalSlider.setObjectName(_fromUtf8("verticalSlider"))
         self.verticalLayout_4.addWidget(self.verticalSlider)
+        self.splitter_3 = QtGui.QSplitter(self.frame)
+        self.splitter_3.setOrientation(QtCore.Qt.Horizontal)
+        self.splitter_3.setObjectName(_fromUtf8("splitter_3"))
+        self.plainTextEdit_2 = QtGui.QPlainTextEdit(self.splitter_3)
+        self.plainTextEdit_2.setObjectName(_fromUtf8("plainTextEdit_2"))
+        self.textEdit_2 = QtGui.QTextEdit(self.splitter_3)
+        self.textEdit_2.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOn)
+        self.textEdit_2.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOn)
+        self.textEdit_2.setObjectName(_fromUtf8("textEdit_2"))
+        self.verticalLayout_4.addWidget(self.splitter_3)
         self.horizontalLayout.addWidget(self.frame)
         self.scrollArea = QtGui.QScrollArea(self.frame_6)
         self.scrollArea.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOn)
@@ -184,14 +194,16 @@ class Ui_DummyWidget(object):
         self.lineEdit = QtGui.QLineEdit(self.frame_2)
         self.lineEdit.setObjectName(_fromUtf8("lineEdit"))
         self.verticalLayout_6.addWidget(self.lineEdit)
-        self.plainTextEdit = QtGui.QPlainTextEdit(self.frame_2)
+        self.splitter_2 = QtGui.QSplitter(self.frame_2)
+        self.splitter_2.setOrientation(QtCore.Qt.Vertical)
+        self.splitter_2.setObjectName(_fromUtf8("splitter_2"))
+        self.plainTextEdit = QtGui.QPlainTextEdit(self.splitter_2)
         self.plainTextEdit.setObjectName(_fromUtf8("plainTextEdit"))
-        self.verticalLayout_6.addWidget(self.plainTextEdit)
-        self.textEdit = QtGui.QTextEdit(self.frame_2)
+        self.textEdit = QtGui.QTextEdit(self.splitter_2)
         self.textEdit.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOn)
         self.textEdit.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOn)
         self.textEdit.setObjectName(_fromUtf8("textEdit"))
-        self.verticalLayout_6.addWidget(self.textEdit)
+        self.verticalLayout_6.addWidget(self.splitter_2)
         self.pushButton_2 = QtGui.QPushButton(self.frame_2)
         self.pushButton_2.setObjectName(_fromUtf8("pushButton_2"))
         self.verticalLayout_6.addWidget(self.pushButton_2)
@@ -209,6 +221,9 @@ class Ui_DummyWidget(object):
         self.verticalLayout_6.addWidget(self.horizontalSlider)
         self.verticalLayout_7.addWidget(self.frame_2)
         self.tabWidget.addTab(self.tab, _fromUtf8(""))
+        self.tab_3 = QtGui.QWidget()
+        self.tab_3.setObjectName(_fromUtf8("tab_3"))
+        self.tabWidget.addTab(self.tab_3, _fromUtf8(""))
         self.horizontalLayout.addWidget(self.tabWidget)
         self.verticalLayout_13.addWidget(self.splitter)
         self.actionReloadStyle = QtGui.QAction(DummyWidget)
@@ -226,6 +241,22 @@ class Ui_DummyWidget(object):
         self.pushButton.setText(_translate("DummyWidget", "PushButton", None))
         self.radioButton.setText(_translate("DummyWidget", "RadioButton", None))
         self.checkBox.setText(_translate("DummyWidget", "CheckBox", None))
+        self.plainTextEdit_2.setPlainText(_translate("DummyWidget", "sasdsdf\n"
+"sdfsfdg\n"
+"sdfsdfgfd\n"
+"\n"
+"\n"
+"dafdfd", None))
+        self.textEdit_2.setHtml(_translate("DummyWidget", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'Ubuntu\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">sasdsdf</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" text-decoration: underline;\">sdfsfdg</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-style:italic;\">sdfsdfgfd</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">dafdfd</span></p></body></html>", None))
         self.groupBox_3.setTitle(_translate("DummyWidget", "Table", None))
         self.groupBox_2.setTitle(_translate("DummyWidget", "Tree", None))
         self.groupBox.setTitle(_translate("DummyWidget", "List", None))
@@ -256,6 +287,7 @@ class Ui_DummyWidget(object):
         self.radioButton_2.setText(_translate("DummyWidget", "RadioButton", None))
         self.checkBox_2.setText(_translate("DummyWidget", "CheckBox", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), _translate("DummyWidget", "Tab 1", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), _translate("DummyWidget", "Seite", None))
         self.actionReloadStyle.setText(_translate("DummyWidget", "reloadStyle", None))
         self.actionReloadStyle.setShortcut(_translate("DummyWidget", "Alt+R", None))
 

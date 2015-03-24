@@ -55,14 +55,14 @@ class DummyWidget(QtGui.QWidget, Ui_DummyWidget):
     def initMapData(self):
         groupLayer = spaf.QgsSpafGroupCanvasLayer(visible=True, stackOrder=1)
         groupLayer.setName("dummy")
-        self.canvas.model().addGroupLayer(groupLayer, visible=True)
+        self.canvas.mapModel().addGroupLayer(groupLayer, visible=True)
         self.canvas._uiWidget.toolButtonLayers.animateClick(10)
         
         path = "/home/kaotika/Dokumente/Daten/Raster/osm_mapnik.mbtiles"
         layer = spaf.QgsSpafRasterLayer(path, "OSM Mapnik")
-        basemap = self.canvas.model().addBasemap(layer)
+        basemap = self.canvas.mapModel().addBasemap(layer)
         basemap.setVisible(True)
-        self.canvas.model().addBasemap(layer)        
+        self.canvas.mapModel().addBasemap(layer)        
         
     def setModels(self):
         model = QtGui.QStandardItemModel()

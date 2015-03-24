@@ -12,5 +12,7 @@
     <file>icons/black/kt-check-data.svg</file>
     <file>icons/white/kt-check-data.svg</file>
     <file>icons/black/check-radio.svg</file>
+    <file>icons/black/splitter-horizontal.svg</file>
+    <file>icons/black/splitter-vertical.svg</file>
   </qresource>
 </RCC>
