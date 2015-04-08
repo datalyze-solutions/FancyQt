@@ -5,11 +5,18 @@ from setuptools.command.test import test as TestCommand
 import io
 import codecs
 import os
+import re
 import sys
 
-import fancyqt
-
 here = os.path.abspath(os.path.dirname(__file__))
+
+version_file = open(os.path.join(here, 'fancyqt', '__init__.py'), 'rU')
+__version__ = re.sub(
+    r".*\b__version__\s+=\s+'([^']+)'.*",
+    r'\1',
+    [ line.strip() for line in version_file if '__version__' in line ].pop(0)
+)
+version_file.close()
 
 def read(*filenames, **kwargs):
     encoding = kwargs.get('encoding', 'utf-8')
@@ -33,22 +40,22 @@ class PyTest(TestCommand):
         errcode = pytest.main(self.test_args)
         sys.exit(errcode)
 
-tests_require = ['pytest']
+tests_require = ['pytest', 'pytest-cov']
 setup(
     name='FancyQt',
-    version=fancyqt.__version__,
+    version=__version__,
     url='https://github.com/datalyze-solutions/FancyQt',
     license='MIT License',
     namespace_packages = ['fancyqt'],
-    author='Matthias Ludwig - Datalyze Solutions',
+    author='Matthias Ludwig',
     tests_require=tests_require,
     install_requires=[],
     cmdclass={'test': PyTest},
     author_email='m.Ludwig@datalyze-solutions.com',
-    description='Provides modern stylesheets for Qt 4.x.',
+    description='Modern stylesheets for Qt 4.x.',
     long_description=long_description,
     packages=['fancyqt'],
-    include_package_data=True,
+    include_package_data=False,
     platforms='any',
     test_suite='tests',
     classifiers = [
@@ -57,8 +64,9 @@ setup(
         'Natural Language :: German',
         'Environment :: X11 Applications :: Qt',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: MIT License',
+        'License :: OSI Approved :: BSD License',
         'Operating System :: OS Independent',
+        'Topic :: Software Development :: Libraries :: Python Modules',
         'Topic :: Software Development :: User Interfaces'
         ],
     extras_require={
