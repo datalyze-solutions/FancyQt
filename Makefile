@@ -2,7 +2,7 @@ UI_FILES = \
 	examples/dummy.py \
 
 COMPILED_RESOURCE_FILES = \
-	fancyqt/icons_rc.py \
+	fancyqt/firefox_rc.py \
 
 RESOURCE_SRC=$(shell grep '^ *<file' resources.qrc | sed 's@</file>@@g;s/.*>//g' | tr '\n' ' ')
 

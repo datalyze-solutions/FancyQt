@@ -31,13 +31,13 @@ class DummyWidget(QtGui.QWidget, Ui_DummyWidget):
         self.setModels()
         
     def _reloadStyle(self):
-        module_name = "fancyqt.firefox.stylesheet"
+        module_name = "fancyqt.firefox"
         if module_name in sys.modules:
             reload(sys.modules[module_name])
         else:
             __import__(module_name, fromlist=[module_name])
         
-        self._app.setStyleSheet(fancyqt.firefox.stylesheet.style) 
+        self._app.setStyleSheet(fancyqt.firefox.style) 
         
     def setModels(self):
         model = QtGui.QStandardItemModel()
@@ -64,7 +64,7 @@ class App(QtGui.QApplication):
     def __init__(self, argv):
         super(App, self).__init__(argv)
         self.setStyle("Cleanlooks")
-        self.setStyleSheet(fancyqt.firefox.stylesheet.style)
+        self.setStyleSheet(fancyqt.firefox.style)
         self.mainWindow = DummyWidget(self)
         self.mainWindow.show()
 
