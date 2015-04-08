@@ -2,3 +2,16 @@ This package provides customized modern Qt stylesheets.
 
 available stylesheets:
 * Firefox
+
+Example Usage
+=============
+
+import fancyqt.firefox
+from PyQt4 import QtGui
+
+app = QtGui.QApplication([])
+app.setStyle("Cleanlooks")
+app.setStyleSheet(fancyqt.firefox.style)
+widget = QtGui.QWidget()
+widget.show()
+app.exec_()
