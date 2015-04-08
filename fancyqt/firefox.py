@@ -1,4 +1,4 @@
-import fancyqt.icons_rc
+import fancyqt.firefox_rc
 
 values = {
     "ffWhite": "#fffdfc",
@@ -19,7 +19,6 @@ values = {
     "ffScrollbarHandleBorder": "#7d7875",
     "borderRadius": "3px",
 }
-print "reloaded"
 
 style = """
 QWidget </
