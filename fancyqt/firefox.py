@@ -1,3 +1,10 @@
+import sip
+try:
+    sip.setapi('QString', 2)
+    sip.setapi('QVariant', 2)
+except ValueError, e:
+    print e
+
 import fancyqt.firefox_rc
 
 values = {
@@ -166,7 +173,7 @@ QComboBox, QAbstractItemView </
     background: {ffWhite};
     alternate-background-color: {ffButtonHighlightMenu};
     color: {ffFontColorDark};
-    
+
     border-radius: {borderRadius};
     selection-background-color: {ffHighlight};
     selection-color: {ffWhite};
@@ -601,7 +608,7 @@ QScrollBar::add-line:hover, QScrollBar::sub-line:hover
 />
 
 QScrollBar::add-line:horizontal
-</      
+</
     border-image: url(:/icons/black/arrow-right.svg);
     subcontrol-position: right;
 />
