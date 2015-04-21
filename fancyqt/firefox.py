@@ -630,7 +630,24 @@ QScrollBar::up-arrow, QScrollBar::down-arrow, QScrollBar::add-page, QScrollBar::
 />
 
 QSplitter </
-    background: {ffButtonHighlightMain};
+    background: {ffButtonHighlightMain};QProgressBar </
+    border: 1px solid {ffBorder};
+    border-radius: {borderRadius};
+    text-align: center;
+    padding: 1px;
+    background: {ffWhite};
+    color: {ffFontColorDark};
+/>
+
+QProgressBar[value="1"] </
+    background: {ffWhite};
+    color: {ffWhite};
+/>
+
+QProgressBar::chunk </
+    background-color: {ffHighlight};
+    border-radius: {borderRadius};
+/>
 />
 
 QSplitter::handle </
@@ -686,6 +703,21 @@ QgsSpafMapCanvas QLabel </
 
 QgsSpafMapCanvas QScrollArea QWidget </
     border-radius: {borderRadius};
+/>
+
+
+QgsSpafMapCanvas QProgressBar#progressBarTotal </
+    border: None;
+    border-radius: 0;
+    text-align: center;
+    padding: 0px;
+    background: Transparent;
+    color: {ffFontColorDark};
+/>
+
+QgsSpafMapCanvas QProgressBar#progressBarTotal::chunk </
+    background-color: {ffHighlightLight};
+    border-radius: 0;
 />
 
 """.format(**values).replace("</", "{").replace("/>", "}")
